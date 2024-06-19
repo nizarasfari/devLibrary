@@ -1,0 +1,38 @@
+<div class="signupContainer">
+    <form class="signupFormContainer" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <img src="assets/logo.jpg" alt="Logo" class="logo">
+
+      <label class="formLabel">Username:</label>
+      <input type="text" class="formInput" formControlName="username" placeholder="Enter your username">
+      <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="error">
+        <small *ngIf="signupForm.get('username')?.errors?.['required']">Username is required</small>
+        <small *ngIf="signupForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters long</small>
+      </div>
+      
+      <label class="formLabel">Email:</label>
+      <input type="text" class="formInput" formControlName="email" placeholder="Enter your email">
+      <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+        <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</small>
+        <small *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email address</small>
+      </div>
+      
+      <label class="formLabel">Password:</label>
+      <input type="password" class="formInput" formControlName="password" placeholder="Enter your password">
+      <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+        <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required</small>
+        <small *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</small>
+      </div>
+      
+      <label class="formLabel">Confirm Password:</label>
+      <input type="password" class="formInput" formControlName="confirmPassword" placeholder="Confirm your password">
+      <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="error">
+        <small *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Confirming your password is required</small>
+      </div>
+      
+      <button type="submit" class="submitButton">Signup</button>
+      <div class="login-link">
+        <a [routerLink]="['/login']">Already a user? Login</a>
+      </div>
+    </form>
+  </div>
+  

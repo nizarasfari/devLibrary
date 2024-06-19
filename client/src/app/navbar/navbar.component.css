@@ -1,0 +1,26 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    width: auto ;
+    height: 60px; /* Default height */
+    background-color: #202225; /* Use your desired background color */
+    z-index: 1000; /* Ensure the navbar stays on top */
+    display: flex;
+    align-items: center;
+    padding: 0 1rem; /* Default padding */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      height: 50px; /* Adjust height for smaller screens */
+      padding: 0 0.5rem; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      height: 40px; /* Further adjust height for very small screens */
+      padding: 0 0.25rem; /* Further adjust padding for very small screens */
+    }
+  }
+  

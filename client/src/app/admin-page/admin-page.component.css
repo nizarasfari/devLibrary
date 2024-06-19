@@ -1,0 +1,23 @@
+.adminHomepgaeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);/* 100% of the viewport height minus the height of the navbar */
+  width: auto;
+  background-color: var(--dark-color);
+}
+
+
+@media screen and (max-width: 768px) {
+  .adminHomepgaeContainer {
+    height: calc(100vh - 50px);/* 100% of the viewport height minus the height of the navbar */
+  }
+    
+}
+
+@media screen and (max-width: 480px) {
+  .adminHomepgaeContainer {
+    height: calc(100vh - 40px);/* 100% of the viewport height minus the height of the navbar */
+  }
+    
+}

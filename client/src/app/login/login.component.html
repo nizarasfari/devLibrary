@@ -1,0 +1,26 @@
+<div class="loginContainer">
+    <form class="loginFormContainer" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <img src="assets/logo.jpg" alt="Logo" class="logo">
+
+        <label class="formLabel">Username:</label>
+        <input type="text" class="formInput" formControlName="username" placeholder="Enter your username">
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error">
+            <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</small>
+            <small *ngIf="loginForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters long</small>
+        </div>
+        <label class="formLabel">Password:</label>
+        <input type="password" class="formInput" formControlName="password" placeholder="Enter your password">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</small>
+        </div>
+
+        <button type="submit" class="submitButton">Login</button>
+        <div class="signup-link">
+            <a [routerLink]="['/signup']">Not a user? Signup</a>
+        </div>
+    </form>
+
+
+</div>
+
